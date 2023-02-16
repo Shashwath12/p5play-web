@@ -2631,8 +2631,8 @@ p5.prototype.registerMethod('init', function p5PlayInit() {
 			let x = this.x + this.p.cos(this.direction) * distance;
 			let y = this.y + this.p.sin(this.direction) * distance;
 			if (dirNameMode) {
-				x = Math.round(x);
-				y = Math.round(y);
+				x = fixRound(x); // rounds if close enough to an integer
+				y = fixRound(y);
 			}
 			return this.moveTo(x, y, speed);
 		}
